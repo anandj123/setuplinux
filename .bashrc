@@ -95,7 +95,8 @@ fi
 # some more ls aliases
 alias mr='mvn package; java -cp /home/anandjain/professional-services/tools/bigquery-tagging/target/bigquery-tagging-1.0.11.jar  com.google.bigquery.Main'
 alias ll='pwd; ls -ltra'
-alias rl='source ~/.bashrc'
+alias cls='clear'
+alias rl='cls;source ~/.bashrc'
 alias gal="gcloud auth application-default login"
 
 # Alias definitions.
