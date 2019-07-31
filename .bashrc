@@ -2,6 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+# Set Message Color Variables
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+BLUE="\033[0;34m"
+NC="\033[0m"
+
+echo -e "${GREEN}Welcome ${BLUE}Anand ${NC}"
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -16,8 +24,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=5000
+HISTFILESIZE=5000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -98,6 +106,9 @@ alias ll='pwd; ls -ltra'
 alias cls='clear'
 alias rl='cls;source ~/.bashrc'
 alias gal="gcloud auth application-default login"
+alias packages="clear;( zcat $( ll -tr /var/log/apt/history.log*.gz ) ; \cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep -B1 '^Commandline:'"
+alias h=history
+alias grep='grep --color'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
