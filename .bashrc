@@ -112,6 +112,7 @@ alias gal="gcloud auth application-default login"
 alias packages="clear;( zcat $( ll -tr /var/log/apt/history.log*.gz ) ; \cat /var/log/apt/history.log ) | egrep '^(Start-Date:|Commandline:)' | grep -v aptdaemon | egrep -B1 '^Commandline:'"
 alias h=history
 alias grep='grep --color'
+alias gits='git status -s'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
