@@ -71,7 +71,8 @@ if [ "$color_prompt" = yes ]; then
     #PS1=$'${debian_chroot:+($debian_chroot)}\[\033[01;33m\]\xe2\x9c\x93 \u $' 
     #PS1="\n\[\e[32;1m\](\[\e[37;1m\]\u\[\e[32;1m\])-(\[\e[37;1m\]jobs:\j\[\e[32;1m\])-(\[\e[37;1m\]\w\[\e[32;1m\])\n[\[\[\e[32;1m\]\!\[\e[32;1m\]]>\[\e[0m\]"
 
-    PS1="┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]───[\[\e[01;49;39m\]\u\[\e[00m\]\[\e[01;49;39m\]@\H\[\e[00m\]]───[\[\e[01;49;39m\]jobs:\j]───[\[\w \033[0;32m\]$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\033[0m\]]───[$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\]] \n└───>"
+    DEFAULT_PS1="┌─[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \[\e[31m\]✘\[\e[0m\]; fi\`]───[\[\e[01;49;39m\]\u\[\e[00m\]\[\e[01;49;39m\]@\H\[\e[00m\]]───[\[\e[01;49;39m\]jobs:\j]───[\[\w \033[0;32m\]\$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\033[0m\]]───[\$(ls | wc -l) files, \$(ls -lah | grep -m 1 total | sed 's/total //')\]] \n└───>"
+    PS1=$DEFAULT_PS1
     #PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] >\[\033[0m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -104,7 +105,7 @@ fi
 
 # some more ls aliases
 alias mr='mvn package; java -cp /home/anandjain/professional-services/tools/bigquery-tagging/target/bigquery-tagging-1.0.11.jar  com.google.bigquery.Main'
-alias ll='pwd; ls -ltra'
+alias ll='ls -ltra'
 alias cls='clear'
 alias rl='cls;source ~/.bashrc'
 alias gal="gcloud auth application-default login"
