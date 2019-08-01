@@ -1,0 +1,1 @@
+echo 'gsutil ls -L -b gs://anand-spanner #check bucket labels'
