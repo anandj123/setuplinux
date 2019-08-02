@@ -1,7 +1,7 @@
 RED="\033[0;31m"  # Red
 GREEN="\033[0;32m"# Green
 BLUE="\033[1;34m" # Blue with bold text
-NC="\033[0m"      # Reset color
+NC="\033[0m"      # Reset color 
 echo " "
 echo -e "  ${BLUE}Orgnization level commands${NC}"
 echo '---------------------------------------------------------------------------------------------'
