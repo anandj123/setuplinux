@@ -10,3 +10,12 @@ DEFAULT_PS1="┌[\`if [ \$? = 0 ]; then echo \[\e[32m\]✔\[\e[0m\]; else echo \
 PS1=$DEFAULT_PS1
 
 ```
+
+### For storing github credentials for 2 hours
+
+```sh
+
+git config credential.helper store
+git config --global credential.helper 'cache --timeout 7200'
+
+```
